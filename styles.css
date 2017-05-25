@@ -62,8 +62,8 @@ a img{
 
 
 .android-logo-image {
-  height: 28px;
-  width: 140px;
+  height: 20px;
+  width: 100px;
 }
 
 
@@ -175,7 +175,7 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/slide01.jpg') center 30% no-repeat;
+  background: url('slide01.jpg') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -188,7 +188,7 @@ a img{
 
 .android-slogan {
   font-size: 60px;
-  padding-top: 160px;
+  padding-top: 120px;
 }
 
 .android-sub-slogan {
