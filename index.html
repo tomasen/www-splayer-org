@@ -66,6 +66,7 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://docs.google.com/document/d/1hv1v9Xnit93YczHKeCRwvZ2EEGau1GL4QDj49e2qXt0/preview">Job</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/tomasen/splayer">Github</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://medium.com/splayer">Blog</a>
               <!--
@@ -143,7 +144,7 @@
             </div>
             <div class="android-phone android-screen">
               <a class="android-image-link" href="">
-                <img class="android-screen-image" src="idea-small.jpg">
+                <img class="android-screen-image" src="idea-small4.jpg">
               </a>
               <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">极致小巧</a>
             </div>
@@ -332,9 +333,9 @@
     </div>
     <!--  http://file0.splayer.org/avant/SPlayerSetupInt.exe?2437 -->
     <div id="float-over-bottom">
-      <a href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe" target="_blank" v-if="! isMacLike"
+      <a href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe" target="_blank" v-if="! isMacLike" onclick="function() {ga('send', 'event', 'Clicks', 'download', 'win');});"
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">下载 Windows 版本</a>
-      <a href="http://itunes.apple.com/app/splayerx/id414675434" target="_blank" v-else
+      <a href="http://itunes.apple.com/app/splayerx/id414675434" target="_blank" v-else onclick="function() {ga('send', 'event', 'Clicks', 'download', 'mac');});"
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">前往 Mac App Store 安装</a>
     </div>
   </div>
