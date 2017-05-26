@@ -44,6 +44,7 @@
   </head>
   <body>
     <div style="display:none;"><img src="slide01.jpg"></img></div>
+    <div id="app">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
@@ -330,11 +331,21 @@
     </div>
     <!--  http://file0.splayer.org/avant/SPlayerSetupInt.exe?2437 -->
     <div id="float-over-bottom">
-      <a href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe" target="_blank"
+      <a href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe" target="_blank" v-if="! isMacLike"
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">下载 Windows 版本</a>
-      <a href="http://itunes.apple.com/app/splayerx/id414675434" target="_blank"
+      <a href="http://itunes.apple.com/app/splayerx/id414675434" target="_blank" v-else
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">前往 Mac App Store 安装</a>
     </div>
+  </div>
     <script src="material.min.js"></script>
+    <script src="vue.min.js"></script>
+    <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        isMacLike: navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false
+      }
+    })
+    </script>
   </body>
 </html>
