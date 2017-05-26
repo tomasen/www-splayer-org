@@ -43,7 +43,7 @@
   </script>
   </head>
   <body>
-    <div style="display:none;"><img src="slide01.jpg"></img></div>
+    <div style="display:none;"><img src="slide_win.jpg"></img></div>
     <div id="app">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
@@ -109,7 +109,7 @@
 
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
-        <div class="android-be-together-section mdl-typography--text-center">
+        <div class="android-be-together-section mdl-typography--text-center" v-bind:class="[isMacLike ? 'slide-bgd-mac' : 'slide-bgd-win']">
           <div class="logo-font android-slogan">
             <!--neat, safe, high performance!-->
             小巧 开源 绿色 智能

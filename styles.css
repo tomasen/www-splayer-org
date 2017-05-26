@@ -170,12 +170,19 @@ a img{
       bottom: 16px;
     }
 
+.slide-bgd-win {
+  background: url('slide_win.jpg') center 30% no-repeat;
+}
+
+.slide-bgd-mac {
+  background: url('slide_mac.jpg') center 30% no-repeat;
+}
+
 .android-be-together-section {
   position: relative;
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('slide01.jpg') center 30% no-repeat;
   background-size: cover;
 }
 
