@@ -30,17 +30,15 @@
     </style>
     <script type="text/javascript">
 
-     var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-816529-3']);
-      _gaq.push(['_trackPageview']);
-      _gaq.push(['_trackPageLoadTime']);
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+      ga('create', 'UA-816529-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
   </head>
   <body>
     <div style="display:none;"><img src="slide_win.jpg"></img></div>
@@ -93,18 +91,13 @@
           <img class="android-logo-image" src="splayer-logo.png">
         </span>
         <nav class="mdl-navigation">
-          <span class="mdl-navigation__link" href="">更多版本</span>
-          <a class="mdl-navigation__link" href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe">Windows</a>
-          <a class="mdl-navigation__link" href="http://itunes.apple.com/app/splayerx/id414675434">Mac OS X</a>
-          <a class="mdl-navigation__link" href="http://hg.splayer.org/splayerx/downloads">Mac免费试用版</a>
-          <a class="mdl-navigation__link" href="http://file.splayer.org/SPlayerSetupInt.exe?SPlayerSetupInt2437_701266.exe">Multilanguage</a>
-          <a class="mdl-navigation__link" href="http://file.splayer.org/splayer.7z?2437.7z">绿色版</a>
-          <a class="mdl-navigation__link" href="http://file.splayer.org/SPlayer.msi?2437.msi">MSI</a>
+          <span class="mdl-navigation__link" href="">更多下载</span>
+          <a class="mdl-navigation__link" v-for="item in menuDownload"
+            href="{{item.link}}">{{item.title}}</a>
           <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link" href="">开发资源</span>
-          <a class="mdl-navigation__link" href="https://github.com/tomasen/splayer">SPlayer</a>
-          <a class="mdl-navigation__link" href="https://bitbucket.org/Tomasen/splayerx/wiki/Home">SPlayerX</a>
-          <a class="mdl-navigation__link" href="http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck">API</a>
+            <a class="mdl-navigation__link" v-for="item in menuDev"
+              href="{{item.link}}">{{item.title}}</a>
         </nav>
       </div>
 
@@ -301,25 +294,20 @@
 
           <div class="mdl-mega-footer--bottom-section">
             <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
-              更多版本
+              更多下载
               <i class="material-icons">arrow_drop_up</i>
             </a>
             <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-              <a class="mdl-menu__item" href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe">Windows</a>
-              <a class="mdl-menu__item" href="http://itunes.apple.com/app/splayerx/id414675434">Mac OS X</a>
-              <a class="mdl-menu__item" href="http://hg.splayer.org/splayerx/downloads">Mac免费试用版</a>
-              <a class="mdl-menu__item" href="http://file.splayer.org/SPlayerSetupInt.exe?SPlayerSetupInt2437_701266.exe">Multilanguage</a>
-              <a class="mdl-menu__item" href="http://file.splayer.org/splayer.7z?2437.7z">绿色版</a>
-              <a class="mdl-menu__item" href="http://file.splayer.org/SPlayer.msi?2437.msi">MSI</a>
+              <a class="mdl-menu__item" v-for="item in menuDownload"
+                href="{{item.link}}">{{item.title}}</a>
             </ul>
             <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
               开发资源
               <i class="material-icons">arrow_drop_up</i>
             </a>
             <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
-              <a class="mdl-menu__item" href="https://github.com/tomasen/splayer">SPlayer</a>
-              <a class="mdl-menu__item" href="https://bitbucket.org/Tomasen/splayerx/wiki/Home">SPlayerX</a>
-              <a class="mdl-menu__item" href="http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck">API</a>
+              <a class="mdl-menu__item" v-for="item in menuDev"
+                href="{{item.link}}">{{item.title}}</a>
             </ul>
 
             <a class="android-link mdl-typography--font-light" href="https://medium.com/splayer">Blog</a>
@@ -334,9 +322,9 @@
     </div>
     <!--  http://file0.splayer.org/avant/SPlayerSetupInt.exe?2437 -->
     <div id="float-over-bottom">
-      <a href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe" target="_blank" v-if="! isMacLike" onclick="ga('send', 'event', 'Clicks', 'download', 'win');"
+      <a href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe" target="_blank" v-if="! isMacLike" v-on:click.once="gatrack('win')"
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">下载 Windows 版本</a>
-      <a href="http://itunes.apple.com/app/splayerx/id414675434" target="_blank" v-else onclick="ga('send', 'event', 'Clicks', 'download', 'mac');"
+      <a href="http://itunes.apple.com/app/splayerx/id414675434" target="_blank" v-else v-on:click.once="gatrack('mac')"
       class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">前往 Mac App Store 安装</a>
     </div>
   </div>
@@ -346,7 +334,25 @@
     var app = new Vue({
       el: '#app',
       data: {
-        isMacLike: navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false
+        isMacLike: navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false,
+        menuDownload: [
+          { link: 'http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe', title: 'Windows标准版' },
+          { link: 'http://file.splayer.org/SPlayerSetupInt.exe?SPlayerSetupInt2437_701266.exe', title: 'Multilanguage(Windows)' },
+          { link: 'http://itunes.apple.com/app/splayerx/id414675434', title: 'Mac OS X' },
+          { link: 'http://hg.splayer.org/splayerx/downloads', title: 'Mac免费试用版(.dmg)' },
+          { link: 'http://file.splayer.org/splayer.7z?2437.7z', title: '绿色版(.7z)' },
+          { link: 'http://file.splayer.org/SPlayer.msi?2437.msi', title: 'MSI企业部署版' }
+        ],
+        menuDev: [
+          { link: 'https://github.com/tomasen/splayer', title: 'Windows版源码' },
+          { link: 'https://bitbucket.org/Tomasen/splayerx/wiki/Home', title: 'Mac版源码' },
+          { link: 'http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck', title: 'API文档' },
+        ]
+      },
+      methods: {
+        gatrack: function (message) {
+          ga('send', 'event', 'Clicks', 'download', message);
+        }
       }
     })
     </script>
