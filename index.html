@@ -79,9 +79,8 @@
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-            <li disabled class="mdl-menu__item">中文</li>
-            <li disabled class="mdl-menu__item">Engligh</li>
-            <li disabled class="mdl-menu__item">版本历史</li>
+            <li class="mdl-menu__item" v-on:click="setloc('cn')">中文</li>
+            <li class="mdl-menu__item" v-on:click="setloc('en')">Engligh</li>
           </ul>
         </div>
       </div>
@@ -91,11 +90,11 @@
           <img class="android-logo-image" src="splayer-logo.png">
         </span>
         <nav class="mdl-navigation">
-          <span class="mdl-navigation__link" href="">更多下载</span>
+          <span class="mdl-navigation__link" href="">{{ $t('msg.moredl') }}</span>
           <a class="mdl-navigation__link" v-for="item in menuDownload"
             href="{{item.link}}">{{item.title}}</a>
           <div class="android-drawer-separator"></div>
-          <span class="mdl-navigation__link" href="">开发资源</span>
+          <span class="mdl-navigation__link" href="">{{ $t('msg.devrc') }}</span>
             <a class="mdl-navigation__link" v-for="item in menuDev"
               href="{{item.link}}">{{item.title}}</a>
         </nav>
@@ -105,12 +104,10 @@
         <a name="top"></a>
         <div class="android-be-together-section mdl-typography--text-center" v-bind:class="[isMacLike ? 'slide-bgd-mac' : 'slide-bgd-win']">
           <div class="logo-font android-slogan">
-            <!--neat, safe, high performance!-->
-            小巧 开源 绿色 智能
+            {{ $t('msg.slogon') }}
           </div>
           <div class="logo-font android-sub-slogan">
-            <!--millions of users are using SPlayer/SPlayerX, how about you?-->
-            备受赞誉的多媒体播放器
+            {{ $t('msg.slogon2') }}
           </div>
           <!--
           <div class="logo-font android-create-character">
@@ -126,38 +123,38 @@
 
         <div class="android-screen-section mdl-typography--text-center">
           <a name="screens"></a>
-          <div class="mdl-typography--display-1-color-contrast">打破语言鸿沟</div>
+          <div class="mdl-typography--display-1-color-contrast">{{ $t('msg.slogon3') }}</div>
           <div class="android-screens">
             <div class="android-wear android-screen">
               <a class="android-image-link" href="">
                 <img class="android-screen-image" src="easy0.png">
                 <img class="android-screen-image" src="easy1.png">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">简单易用</a>
+              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">{{ $t('msg.tagline0') }}</a>
             </div>
             <div class="android-phone android-screen">
               <a class="android-image-link" href="">
                 <img class="android-screen-image" src="idea-small4.jpg">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">极致小巧</a>
+              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">{{ $t('msg.tagline1') }}</a>
             </div>
             <div class="android-tablet android-screen">
               <a class="android-image-link" href="">
                 <img class="android-screen-image" src="topmacapp.png">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">倍受认可</a>
+              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">{{ $t('msg.tagline2') }}</a>
             </div>
             <div class="android-tv android-screen">
               <a class="android-image-link" href="">
                 <img class="android-screen-image" src="illustration.jpg">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">AI字幕</a>
+              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">{{ $t('msg.tagline3') }}</a>
             </div>
             <div class="android-auto android-screen">
               <a class="android-image-link" href="">
                 <img class="android-screen-image" src="images/tv-on.jpg">
               </a>
-              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">高画质 低消耗</a>
+              <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">{{ $t('msg.tagline4') }}</a>
             </div>
           </div>
         </div>
@@ -281,20 +278,20 @@
             </div>
             <div class="mdl-mega-footer--right-section">
               <a class="mdl-typography--font-light" href="#top">
-                回到页面顶部
+                {{ $t('msg.backtop') }}
                 <i class="material-icons">expand_less</i>
               </a>
             </div>
           </div>
 
           <div class="mdl-mega-footer--middle-section">
-            <p class="mdl-typography--font-light"> © 2009-2017 射手科技 </p>
+            <p class="mdl-typography--font-light"> © 2009-2017 {{ $t('msg.copyright') }} </p>
             <p class="mdl-typography--font-light">ICP备案编号：沪ICP备09001657</p>
           </div>
 
           <div class="mdl-mega-footer--bottom-section">
             <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
-              更多下载
+              {{ $t('msg.moredl') }}
               <i class="material-icons">arrow_drop_up</i>
             </a>
             <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
@@ -302,7 +299,7 @@
                 href="{{item.link}}">{{item.title}}</a>
             </ul>
             <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
-              开发资源
+              {{ $t('msg.devrc') }}
               <i class="material-icons">arrow_drop_up</i>
             </a>
             <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
@@ -322,39 +319,16 @@
     </div>
     <!--  http://file0.splayer.org/avant/SPlayerSetupInt.exe?2437 -->
     <div id="float-over-bottom">
-      <a href="http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe" target="_blank" v-if="! isMacLike" v-on:click.once="gatrack('win')"
-      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">下载 Windows 版本</a>
-      <a href="http://itunes.apple.com/app/splayerx/id414675434" target="_blank" v-else v-on:click.once="gatrack('mac')"
-      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">前往 Mac App Store 安装</a>
+      <a :href="cn ? menuDownload[0].link : menuDownload[1].link "
+      target="_blank" v-if="! isMacLike" v-on:click.once="gatrack('win')"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">{{ $t('button.win') }}</a>
+      <a :href="menuDownload[2].link" target="_blank" v-else v-on:click.once="gatrack('mac')"
+      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">{{ $t('button.osx') }}</a>
     </div>
   </div>
     <script src="material.min.js"></script>
     <script src="vue.min.js"></script>
-    <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        isMacLike: navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false,
-        menuDownload: [
-          { link: 'http://file.splayer.org/SPlayerSetup.exe?SPlayerSetup2437_701266.exe', title: 'Windows标准版' },
-          { link: 'http://file.splayer.org/SPlayerSetupInt.exe?SPlayerSetupInt2437_701266.exe', title: 'Multilanguage(Windows)' },
-          { link: 'http://itunes.apple.com/app/splayerx/id414675434', title: 'Mac OS X' },
-          { link: 'http://hg.splayer.org/splayerx/downloads', title: 'Mac免费试用版(.dmg)' },
-          { link: 'http://file.splayer.org/splayer.7z?2437.7z', title: '绿色版(.7z)' },
-          { link: 'http://file.splayer.org/SPlayer.msi?2437.msi', title: 'MSI企业部署版' }
-        ],
-        menuDev: [
-          { link: 'https://github.com/tomasen/splayer', title: 'Windows版源码' },
-          { link: 'https://bitbucket.org/Tomasen/splayerx/wiki/Home', title: 'Mac版源码' },
-          { link: 'http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck', title: 'API文档' },
-        ]
-      },
-      methods: {
-        gatrack: function (message) {
-          ga('send', 'event', 'Clicks', 'download', message);
-        }
-      }
-    })
-    </script>
+    <script src="vue-i18n.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
