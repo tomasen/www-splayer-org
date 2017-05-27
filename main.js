@@ -1,6 +1,7 @@
 const messages = {
   en: {
     msg: {
+      home: 'Home',
       moredl: 'All Platforms',
       devrc: 'Dev Resources',
       slogon: 'neat, safe, high performance!',
@@ -30,10 +31,15 @@ const messages = {
     button: {
       win: 'Download Windows Installer',
       osx: 'Mac App Store'
+    },
+    installed: {
+      title: "Thanks for your trust",
+      thanks: "Your support is our motivation."
     }
   },
   cn: {
     msg: {
+      home: '首页',
       moredl: '更多下载',
       devrc: '开发资源',
       slogon: '小巧 开源 绿色 智能',
@@ -63,6 +69,10 @@ const messages = {
     button: {
       win: '下载 Windows 版本',
       osx: '前往 Mac App Store 安装'
+    },
+    installed: {
+      title: "感谢",
+      thanks: "谢谢您试用射手影音。您的支持是我们的动力。"
     }
   }
 }
@@ -74,6 +84,10 @@ if (urlhash.match(/zh/i)) {
   iscnuser = true;
 } else if (urlhash.match(/en/i)) {
   iscnuser = false;
+}
+
+if (!iscnuser) {
+  document.title = "SPlayer & SPlayerX - the award winning media player on both of windows and mac os x"
 }
 
 Vue.use(VueI18n)

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="射手播放器 SPlayer SPlayerX Mac OSX 苹果 射手影音 射手影音播放器 字幕播放器 字幕 影音播放器 电影播放器 DVD播放器 高清播放器 绿色播放器 万能播放器 智能播放器 DVD 全能播放器 全能播放软件 Real播放器 电影播放 高清播放 音乐播放 解码 解码器 高清电影 广告拦截 影音播放软件 痕迹清理 免费软件 免费播放器 安全播放器 在线播放 Stormplayer" />
+    <meta name="description" content="仅需5M，安全播放所有视频，强大到极致，绿色无插件，字幕匹配最智能精准。采用最新DirectX硬件加速技术，特有画面增益，清晰播放720p、1080p高清。是真正属于中文用户的开源播放器。 比暴风影音、风雷影音、快乐影音、超级解霸、PowerDVD、酷热还牛，智能解码、广告拦截、痕迹清理、收藏管理，完全免费、无插件，华军、天空、中关村在线、新浪、搜狐、讯雷、电驴、BT、免费下载，播放稳定、高质量、占用内存少，听音乐、看电影、在线播放，支持所有流行格式 AVI RM mpg mpeg4 rmvb dvd realone realplay quicktime等上百种格式。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>射手影音 SPlayer 与 SPlayerX</title>
+
+    <link rel="stylesheet" href="material.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-install.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+    <script type="text/javascript">
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-816529-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    <div id="app" class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title"><a href="./" class="android-link"> {{ $t('installed.title') }} </a></span>
+          <div class="mdl-layout-spacer"></div>
+          <!--
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search">
+              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+          </div>
+          -->
+        </div>
+      </header>
+      <div class="demo-ribbon"></div>
+      <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <div class="demo-crumbs mdl-color-text--grey-500">
+              <a href="./" class="android-link mdl-typography--font-light">{{ $t('msg.home') }}</a> &gt; {{ $t('installed.title')  }}
+            </div>
+            <h4>{{ $t('installed.thanks')  }}</h4>
+              <p>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- installed -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-3236699304584559"
+                     data-ad-slot="4428039258"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+              </p>
+          </div>
+        </div>
+        <footer class="demo-footer mdl-mini-footer">
+          <div class="mdl-mini-footer--left-section">
+            <ul class="mdl-mini-footer--link-list">
+              <li v-if="cn" >ICP备案编号：沪ICP备09001657</li>
+              <li v-else> © 2009-2017 {{ $t('msg.copyright') }} </li>
+              <!--
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy and Terms</a></li>
+              <li><a href="#">User Agreement</a></li>
+              -->
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <!--
+    <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/article/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
+  -->
+    <script src="material.min.js"></script>
+    <script src="vue.min.js"></script>
+    <script src="vue-i18n.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
