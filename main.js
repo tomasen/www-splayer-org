@@ -143,7 +143,7 @@ var app = new Vue({
     },
     {
       link: 'http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck',
-      title: i18n.t("rc.osxfree")
+      title: i18n.t("rc.api")
     }, ]
   },
   methods: {
