@@ -34,7 +34,8 @@ const messages = {
     },
     installed: {
       title: "Thanks for your trust",
-      thanks: "Your support is our motivation."
+      thanks: "Your support is our motivation.",
+      content: "This is an open sourced software. Developers are welcome to participate in the new version and the design of new features. Please go to the home page and check out our development resources."
     }
   },
   cn: {
@@ -72,7 +73,8 @@ const messages = {
     },
     installed: {
       title: "感谢",
-      thanks: "谢谢您试用射手影音。您的支持是我们的动力。"
+      thanks: "谢谢您试用射手影音。您的支持是我们的动力。",
+      content: "这是一个开源软件，欢迎开发者参与到新版本和新功能的设计制作中，详情请前往首页查看开发资源。"
     }
   }
 }
