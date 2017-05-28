@@ -142,7 +142,8 @@ var app = new Vue({
       title: i18n.t("rc.osx")
     },
     {
-      link: 'http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck',
+      link: 'https://docs.google.com/document/d/1ufdzy6jbornkXxsD-OGl3kgWa4P9WO5NZb6_QYZiGI0/preview',
+      // link: 'http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck',
       title: i18n.t("rc.api")
     }, ]
   },
