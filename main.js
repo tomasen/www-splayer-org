@@ -19,7 +19,7 @@ const messages = {
       std: 'Windows (Chinese)',
       intl: 'Windows STD',
       osx: 'Mac OS X',
-      osxfree: 'Mac Trial(.dmg)',
+      osxfree: 'Free Mac Trial(.dmg)',
       green: 'Green Edition(.7z)',
       msi: 'Enterpraise(.msi)'
     },
