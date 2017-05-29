@@ -64,9 +64,8 @@
           <!-- Navigation -->
           <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://docs.google.com/document/d/1hv1v9Xnit93YczHKeCRwvZ2EEGau1GL4QDj49e2qXt0/preview">Job</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://github.com/tomasen/splayer">Github</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="https://medium.com/splayer">Blog</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" v-for="item in menuTop"
+                v-bind:href="item.link" v-on:click="gatrack(item.title, 'top')">{{item.title}}</a>
               <!--
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="http://itunes.apple.com/app/splayerx/id414675434">Mac App Store</a>
               -->
@@ -76,7 +75,7 @@
             <img class="android-logo-image" src="splayer-logo.png">
           </span>
           <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-            <i class="material-icons">more_vert</i>
+            <i class="material-icons">language</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
             <li class="mdl-menu__item" v-on:click="setloc('cn')">中文</li>
@@ -92,11 +91,11 @@
         <nav class="mdl-navigation">
           <span class="mdl-navigation__link" href="">{{ $t('msg.moredl') }}</span>
           <a class="mdl-navigation__link" v-for="item in menuDownload"
-            v-bind:href="item.link">{{item.title}}</a>
+            v-bind:href="item.link" v-on:click="gatrack(item.title, 'more1')">{{item.title}}</a>
           <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link" href="">{{ $t('msg.devrc') }}</span>
             <a class="mdl-navigation__link" v-for="item in menuDev"
-              v-bind:href="item.link">{{item.title}}</a>
+              v-bind:href="item.link" v-on:click="gatrack(item.title, 'dev1')">{{item.title}}</a>
         </nav>
       </div>
 
@@ -296,7 +295,7 @@
             </a>
             <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
               <a class="mdl-menu__item" v-for="item in menuDownload"
-                v-bind:href="item.link">{{item.title}}</a>
+                v-bind:href="item.link" v-on:click="gatrack(item.title, 'more2')" >{{item.title}}</a>
             </ul>
             <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
               {{ $t('msg.devrc') }}
@@ -304,7 +303,7 @@
             </a>
             <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
               <a class="mdl-menu__item" v-for="item in menuDev"
-                v-bind:href="item.link">{{item.title}}</a>
+                v-bind:href="item.link" v-on:click="gatrack(item.title, 'dev2')">{{item.title}}</a>
             </ul>
 
             <a class="android-link mdl-typography--font-light" href="https://medium.com/splayer">Blog</a>

@@ -36,6 +36,11 @@ const messages = {
       title: "Thanks for your trust",
       thanks: "Your support is our motivation.",
       content: "This is an open sourced software. Developers are welcome to participate in the new version and the design of new features. Please go to the home page and check out our development resources."
+    },
+    top: {
+      blog: "Blog",
+      github: "Github",
+      job: "Job"
     }
   },
   cn: {
@@ -75,6 +80,11 @@ const messages = {
       title: "感谢",
       thanks: "谢谢您试用射手影音。您的支持是我们的动力。",
       content: "这是一个开源软件，欢迎开发者参与到新版本和新功能的设计制作中，详情请前往首页查看开发资源。"
+    },
+    top: {
+      blog: "专栏",
+      github: "源码",
+      job: "工作"
     }
   }
 }
@@ -145,11 +155,24 @@ var app = new Vue({
       link: 'https://docs.google.com/document/d/1ufdzy6jbornkXxsD-OGl3kgWa4P9WO5NZb6_QYZiGI0/preview',
       // link: 'http://docs.google.com/View?id=dg2mvjsw_36dvjgjrck',
       title: i18n.t("rc.api")
-    }, ]
+    }],
+    menuTop: [
+    {
+      link: 'https://docs.google.com/document/d/1hv1v9Xnit93YczHKeCRwvZ2EEGau1GL4QDj49e2qXt0/preview',
+      title: i18n.t("top.job")
+    },
+    {
+      link: 'https://github.com/tomasen/splayer',
+      title: i18n.t("top.github")
+    },
+    {
+      link: 'https://medium.com/splayer',
+      title: i18n.t("top.blog")
+    }],
   },
   methods: {
-    gatrack: function (message) {
-      ga('send', 'event', 'Clicks', 'download', message);
+    gatrack: function (message, cat) {
+      ga('send', 'event', 'Clicks', cat ? cat : 'download', message);
     },
     setloc: function (lang) {
       window.location.hash = "#" + lang;
