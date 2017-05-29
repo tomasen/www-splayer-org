@@ -5,7 +5,7 @@ const messages = {
       moredl: 'All Platforms',
       devrc: 'Dev Resources',
       slogon: 'neat, safe, high performance!',
-      slogon2: 'millions of users are using SPlayer/SPlayerX, how about you?',
+      slogon2: 'millions of users are using us, how about you?',
       slogon3: 'break the language barriers',
       tagline0: 'easy to use',
       tagline1: 'simplicity',
