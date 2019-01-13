@@ -18,6 +18,7 @@ const messages = {
     dl: {
       std: 'Windows (Chinese)',
       intl: 'Windows STD',
+      beta: 'Beta Version',
       osx: 'Mac OS X',
       osxfree: 'Free Mac Trial(.dmg)',
       green: 'Green Edition(.7z)',
@@ -62,6 +63,7 @@ const messages = {
     dl: {
       std: 'Windows标准版',
       intl: 'Multilanguage(Windows)',
+      beta: '测试版下载(4.0)',
       osx: 'Mac OS X',
       osxfree: 'Mac免费试用版(.dmg)',
       green: '绿色版(.7z)',
@@ -125,6 +127,10 @@ var app = new Vue({
     {
       link: 'http://file.splayer.org/SPlayerSetupInt.exe?SPlayerSetupInt2437_701266.exe',
       title: i18n.t("dl.intl")
+    },
+    {
+      link: 'https://beta.splayer.org/',
+      title: i18n.t("dl.beta")
     },
     {
       link: 'http://itunes.apple.com/app/splayerx/id414675434',
